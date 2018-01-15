@@ -53,7 +53,8 @@ In case of a successful request, response will be as follows
 		"LastName":"Doe"
 	},
 	"Success":true
-}```
+}
+```
 
 The response will have status code 200, created user in field `Data` and `Success` field denoting the operation result.
 
@@ -73,3 +74,39 @@ In case when the email is duplicate the response code will be 409 and the follow
 	"Success":false
 }
 ```
+
+### Unprocessable Entity (422)
+
+When there are some validation errors, the response code will be 422. For example the following request
+
+```json
+{
+    "Password":"123",
+    "PasswordConfirmation": "123",
+    "Email": "johndoe1@example.com",
+    "FirstName": "John",
+    "LastName": "Doe"
+}
+```
+
+will result in 
+
+```json
+{
+    "Error":null,
+	"StackTrace":null,
+	"Data":{
+		"Error":"Password must be 6 characters long",
+		"StackTrace":null,
+		"Success":false
+	},
+	"Success":false
+}
+```
+
+Following is the list of possible response
+
+* *Passwords don't match* - occurs when passwords don't match
+* *Password is too weak* - if the password doesn't meet the security requirements
+* *Invalid email* - if the provided email is not in a correct format
+* *Email is required* - if the email is not provided
