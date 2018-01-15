@@ -170,4 +170,4 @@ For security reasons all response will result in status code 400.
 
 `error_description` will contain human readable explanation of the error. 
 
-*Please note that this endpoint will block for 5 minutes after three unsuccessful attempts for one username. Once those 5 minutes passes, user can try to login again. However if even next 3 attempts will not be successful, the account will be temporary locked and personal contact of the user will be required to unlock the account*
+**Please note that this endpoint will block for 5 minutes after three unsuccessful attempts for one username. Once those 5 minutes passes, user can try to login again. However if even next 3 attempts will not be successful, the account will be temporary locked and personal contact of the user will be required to unlock the account**
