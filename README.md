@@ -115,7 +115,7 @@ Following is the list of possible response
 
 If you are receiving bad request, then you are trying to submit malformed request. Below is the possible request that can result in 400
 
-```json
+```
 incorrect json}}{{
 ```
 
